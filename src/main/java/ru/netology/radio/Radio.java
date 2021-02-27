@@ -2,15 +2,15 @@ package ru.netology.radio;
 
 public class Radio {
     private int currentChanel;
-    private int maxChannel = 9;
-    private int minChannel = 0;
+    private int maxChanel = 9;
+    private int minChanel = 0;
     private int currentSound;
     private int maxSound = 10;
     private int minSound = 0;
 
     public int getCurrentChanel() {
 
-        if (currentChanel > minChannel && currentChanel < maxChannel || currentChanel == maxChannel || currentChanel == minChannel) {
+        if (currentChanel > minChanel && currentChanel < maxChanel || currentChanel == maxChanel || currentChanel == minChanel) {
             return currentChanel;
         }
         return currentChanel;
@@ -18,17 +18,17 @@ public class Radio {
 
 
     public void setCurrentChanel(int currentChanel) {
-        if (currentChanel >= minChannel) {
+        if (currentChanel >= minChanel) {
             this.currentChanel = currentChanel;
         }
-        if (currentChanel <= maxChannel) {
+        if (currentChanel <= maxChanel) {
             this.currentChanel = currentChanel;
         }
-        if (currentChanel > maxChannel) {
-            this.currentChanel = minChannel;
+        if (currentChanel > maxChanel) {
+            this.currentChanel = minChanel;
         }
-        if (currentChanel < minChannel) {
-            this.currentChanel = maxChannel;
+        if (currentChanel < minChanel) {
+            this.currentChanel = maxChanel;
         }
     }
 
@@ -59,6 +59,26 @@ public class Radio {
         }
         if (currentSound <= minSound) {
             this.currentSound = minSound;
+        }
+    }
+    public void nextSound () {
+        if (currentSound < maxSound){
+            currentSound ++;
+        }
+    }
+    public void prevSound () {
+        if (currentSound > minSound) {
+            currentSound --;
+        }
+    }
+    public void nextChannel (){
+        if (currentChanel < maxChanel) {
+            currentChanel++;
+        }
+    }
+    public void prevChanel (){
+        if (currentChanel > minChanel){
+            currentChanel --;
         }
     }
 }
