@@ -9,10 +9,6 @@ public class Radio {
     private int minSound = 0;
 
     public int getCurrentChanel() {
-
-        if (currentChanel > minChanel && currentChanel < maxChanel || currentChanel == maxChanel || currentChanel == minChanel) {
-            return currentChanel;
-        }
         return currentChanel;
     }
 
@@ -61,24 +57,28 @@ public class Radio {
             this.currentSound = minSound;
         }
     }
-    public void nextSound () {
-        if (currentSound < maxSound){
-            currentSound ++;
-        }
+
+    public void nextSound() {
+        if (currentSound < maxSound) {
+            currentSound++;
+        } else currentSound = maxSound;
     }
-    public void prevSound () {
+
+    public void prevSound() {
         if (currentSound > minSound) {
-            currentSound --;
-        }
+            currentSound--;
+        } else currentSound = minSound;
     }
-    public void nextChannel (){
+
+    public void nextChannel() {
         if (currentChanel < maxChanel) {
             currentChanel++;
-        }
+        } else currentChanel = minChanel;
     }
-    public void prevChanel (){
-        if (currentChanel > minChanel){
-            currentChanel --;
-        }
+
+    public void prevChanel() {
+        if (currentChanel > minChanel) {
+            currentChanel--;
+        } else currentChanel = maxChanel;
     }
 }
