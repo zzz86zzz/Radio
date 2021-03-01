@@ -61,24 +61,32 @@ public class Radio {
     public void nextSound() {
         if (currentSound < maxSound) {
             currentSound++;
-        } else currentSound = maxSound;
+        } else {
+            currentSound = maxSound;
+        }
     }
 
     public void prevSound() {
         if (currentSound > minSound) {
             currentSound--;
-        } else currentSound = minSound;
+        }
     }
 
-    public void nextChannel() {
-        if (currentChanel < maxChanel) {
-            currentChanel++;
-        } else currentChanel = minChanel;
-    }
 
     public void prevChanel() {
         if (currentChanel > minChanel) {
             currentChanel--;
-        } else currentChanel = maxChanel;
+        } else {
+            currentChanel = maxChanel;
+        }
+    }
+
+    public void nextChanel() {
+        if (currentChanel < maxChanel) {
+            currentChanel++;
+        } else {
+            currentChanel = minChanel;
+        }
     }
 }
+

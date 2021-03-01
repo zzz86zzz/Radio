@@ -8,67 +8,100 @@ class RadioTest {
     Radio radio = new Radio();
 
     @Test
-    public void currentChanelInTheRange(){
+    public void currentChanelInTheRange() {
         radio.setCurrentChanel(4);
-        assertEquals(4,radio.getCurrentChanel());
+        assertEquals(4, radio.getCurrentChanel());
 
     }
+
     @Test
-    public void currentChanelMoreRange(){
+    public void currentChanelMoreRange() {
         radio.setCurrentChanel(11);
-        assertEquals(0,radio.getCurrentChanel());
+        assertEquals(0, radio.getCurrentChanel());
 
     }
+
     @Test
-    public void currentChanelLessRange(){
+    public void currentChanelLessRange() {
         radio.setCurrentChanel(-1);
-        assertEquals(9,radio.getCurrentChanel());
+        assertEquals(9, radio.getCurrentChanel());
 
     }
+
     @Test
-    public void currentChanelEqualMax(){
+    public void currentChanelEqualMax() {
         radio.setCurrentChanel(9);
-        assertEquals(9,radio.getCurrentChanel());
+        assertEquals(9, radio.getCurrentChanel());
 
     }
 
     @Test
-    public void currentChanelEqualMin(){
+    public void currentChanelEqualMin() {
         radio.setCurrentChanel(0);
-        assertEquals(0,radio.getCurrentChanel());
+        assertEquals(0, radio.getCurrentChanel());
 
     }
+
     @Test
-    public void currentSoundlInTheRange(){
+    public void currentSoundlInTheRange() {
         radio.setCurrentSound(5);
-        assertEquals(5,radio.getCurrentSound());
+        assertEquals(5, radio.getCurrentSound());
 
     }
+
     @Test
-    public void currentSoundMoreRange(){
+    public void currentSoundMoreRange() {
         radio.setCurrentSound(12);
-        assertEquals(10,radio.getCurrentSound());
+        assertEquals(10, radio.getCurrentSound());
 
     }
+
     @Test
-    public void currentSoundLessRange(){
+    public void currentSoundLessRange() {
         radio.setCurrentSound(-1);
-        assertEquals(0,radio.getCurrentSound());
+        assertEquals(0, radio.getCurrentSound());
 
     }
+
     @Test
-    public void currentSoundlEqualMax(){
+    public void currentSoundlEqualMax() {
         radio.setCurrentSound(10);
-        assertEquals(10,radio.getCurrentSound());
+        assertEquals(10, radio.getCurrentSound());
 
     }
 
     @Test
-    public void currentSoundEqualMin(){
+    public void currentSoundEqualMin() {
         radio.setCurrentSound(0);
-        assertEquals(0,radio.getCurrentSound());
+        assertEquals(0, radio.getCurrentSound());
 
     }
 
+    @Test
+    public void nextChanel() {
+        radio.setCurrentChanel(5);
+        radio.nextChanel();
+        assertEquals(6, radio.getCurrentChanel());
+    }
 
+    @Test
+    public void prevChanel() {
+        radio.setCurrentChanel(0);
+        radio.prevChanel();
+        assertEquals(9, radio.getCurrentChanel());
+    }
+
+    @Test
+    public void prevSound() {
+        radio.setCurrentSound(0);
+        radio.prevSound();
+        assertEquals(0, radio.getCurrentSound());
+    }
+
+    @Test
+    public void nextSound() {
+        radio.setCurrentSound(9);
+        radio.nextSound();
+        assertEquals(10, radio.getCurrentSound());
+    }
 }
