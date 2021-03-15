@@ -4,10 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.netology</groupId>
+    <groupId>org.example</groupId>
     <artifactId>Radio</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -32,9 +31,7 @@
                 <configuration>
                     <failIfNoTests>true</failIfNoTests>
                 </configuration>
-
             </plugin>
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -49,12 +46,14 @@
                     </execution>
                     <execution>
                         <id>report</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
                     <execution>
                         <id>check</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -63,13 +62,10 @@
                 <configuration>
                     <rules>
                         <rule>
-                            <excludes>
-                                <exclude>*Test</exclude>
-                            </excludes>
                             <limits>
                                 <limit>
                                     <counter>BRANCH</counter>
-                                    <value>CONVERTER</value>
+                                    <value>COVEREDRATIO</value>
                                     <minimum>100%</minimum>
                                 </limit>
                             </limits>
@@ -79,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
